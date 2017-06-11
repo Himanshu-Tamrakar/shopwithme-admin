@@ -4,8 +4,9 @@ import template from './home.html';
 import uiRouter from '@uirouter/angularjs';
 import ngMaterial from 'angular-material';
 import {
-  Meteor
+    Meteor
 } from 'meteor/meteor';
+
 
 class Home {
   constructor($log, $scope, $reactive, $timeout, $state, $q, $rootScope) {
@@ -17,7 +18,11 @@ class Home {
     this.timeout = $timeout;
     this.state = $state;
     this.rootScope = $rootScope;
+
+
   }
+
+  
 }
 
 
