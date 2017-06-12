@@ -6,10 +6,11 @@ import ngMaterial from 'angular-material';
 import {
     Meteor
 } from 'meteor/meteor';
+import {name as Location} from '../location/location'
 
 
 class Home {
-  constructor($log, $scope, $reactive, $timeout, $state, $q, $rootScope) {
+  constructor($scope, $reactive, $timeout, $state, $q) {
     'ngInject';
 
     $reactive(this).attach($scope);
@@ -17,12 +18,10 @@ class Home {
     this.scope = $scope;
     this.timeout = $timeout;
     this.state = $state;
-    this.rootScope = $rootScope;
-
 
   }
 
-  
+
 }
 
 
@@ -32,6 +31,7 @@ export default angular.module(name, [
   angularMeteor,
   uiRouter,
   ngMaterial,
+  Location
 ]).component(name, {
   template,
   controllerAs: name,
