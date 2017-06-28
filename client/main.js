@@ -1,12 +1,12 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import { Meteor } from 'meteor/meteor';
-import { name as SalonTrap } from '../imports/ui/components/salontrap/salontrap';
+import { name as ShopWithMe } from '../imports/ui/components/shopwithme/shopwithme';
 
 
 function onReady() {
   angular.bootstrap(document, [
-    SalonTrap
+    ShopWithMe
   ], {
     strictDi: true
   });

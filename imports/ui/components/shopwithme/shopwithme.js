@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
 // import ngSanitize from 'angular-sanitize';
 import uiRouter from '@uirouter/angularjs';
-import template from './salontrap.html';
+import template from './shopwithme.html';
 import {
     Meteor
 } from 'meteor/meteor';
@@ -15,7 +15,7 @@ import {
   name as Home
 } from '../home/home';
 
-class SalonTrap {
+class ShopWithMe {
   constructor($scope, $reactive, $rootScope, $timeout, $state, $interval) {
 
     'ngInject';
@@ -27,7 +27,7 @@ class SalonTrap {
     this.rootScope = $rootScope;
   }
 }
-const name = 'salontrap';
+const name = 'shopwithme';
 
 export default angular.module(name, [
   angularMeteor,
@@ -38,15 +38,15 @@ export default angular.module(name, [
 ]).component(name, {
   template,
   controllerAs: name,
-  controller: SalonTrap
+  controller: ShopWithMe
 }).config(config);
 
 function config($locationProvider, $urlRouterProvider, $stateProvider) {
   'ngInject';
 
-  $stateProvider.state('salontrap', {
+  $stateProvider.state('shopwithme', {
       abstract: true,
-      template: '<salontrap></salontrap>'
+      template: '<shopwithme></shopwithme>'
   });
 
   $locationProvider.html5Mode(true);

@@ -6,7 +6,6 @@ import ngMaterial from 'angular-material';
 import {
     Meteor
 } from 'meteor/meteor';
-import {name as Location} from '../location/location'
 
 
 class Home {
@@ -30,8 +29,7 @@ const name = 'home';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  ngMaterial,
-  Location
+  ngMaterial
 ]).component(name, {
   template,
   controllerAs: name,
