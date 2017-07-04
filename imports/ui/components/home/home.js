@@ -6,6 +6,15 @@ import ngMaterial from 'angular-material';
 import {
     Meteor
 } from 'meteor/meteor';
+import {
+  name as HeaderImages
+} from '../headerImages/headerImages'
+import {
+  name as AllProducts
+} from '../allProducts/allProducts'
+import {
+  name as AllCardObjects
+} from '../allCardObjects/allCardObjects'
 
 
 class Home {
@@ -17,10 +26,7 @@ class Home {
     this.scope = $scope;
     this.timeout = $timeout;
     this.state = $state;
-
   }
-
-
 }
 
 
@@ -29,7 +35,10 @@ const name = 'home';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  ngMaterial
+  ngMaterial,
+  HeaderImages,
+  AllProducts,
+  AllCardObjects
 ]).component(name, {
   template,
   controllerAs: name,
