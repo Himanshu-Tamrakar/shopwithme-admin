@@ -15,7 +15,9 @@ import {
 import {
   name as AllCardObjects
 } from '../allCardObjects/allCardObjects'
-
+import {
+  name as QuestionAndAnswers
+} from '../questionAndAnswers/questionAndAnswers'
 
 class Home {
   constructor($scope, $reactive, $timeout, $state, $q) {
@@ -38,7 +40,8 @@ export default angular.module(name, [
   ngMaterial,
   HeaderImages,
   AllProducts,
-  AllCardObjects
+  AllCardObjects,
+  QuestionAndAnswers
 ]).component(name, {
   template,
   controllerAs: name,
