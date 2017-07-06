@@ -7,14 +7,8 @@ import {
   Meteor
 } from 'meteor/meteor';
 import {
-  name as HeaderImages
-} from '../headerImages/headerImages'
-import {
   Products
 } from '../../../api/products'
-import {
-  Sellers
-} from '../../../api/sellers'
 
 
 class AllProducts {
@@ -135,6 +129,15 @@ function config($stateProvider) {
   'ngInject';
   $stateProvider.state('allProducts', {
     url: '/allProducts',
-    template: '<all-products></all-products>'
+    template: '<all-products></all-products>',
+    resolve: {
+      currentUser($q, $state) {
+        if (Meteor.userId() === null) {
+          $state.go('login')
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
   });
 }

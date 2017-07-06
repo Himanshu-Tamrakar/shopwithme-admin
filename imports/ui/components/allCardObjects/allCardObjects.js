@@ -124,6 +124,15 @@ function config($stateProvider) {
   'ngInject';
   $stateProvider.state('allCardObjects', {
     url: '/allCardObjects',
-    template: '<all-card-objects></all-card-objects>'
+    template: '<all-card-objects></all-card-objects>',
+    resolve: {
+      currentUser($q, $state) {
+        if (Meteor.userId() === null) {
+          $state.go('login')
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
   });
 }

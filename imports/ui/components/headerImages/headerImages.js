@@ -23,13 +23,11 @@ class HeaderImages {
 
     this.imageUrl = null;
     this.imageType = null;
-
     this.savedImage = {
       '_id': null,
       'imageUrl': null,
       'imageType': null
     }
-
     $timeout(function() {
       $(document).ready(function() {
         $('.modal').modal();
@@ -40,6 +38,7 @@ class HeaderImages {
       });
 
     }, 10);
+
     this.helpers({
       allImages() {
         return Images.find({})
@@ -110,6 +109,15 @@ function config($stateProvider) {
   'ngInject';
   $stateProvider.state('headerImages', {
     url: '/headerImages',
-    template: '<header-images></header-images>'
+    template: '<header-images></header-images>',
+    resolve: {
+      currentUser($q, $state) {
+        if (Meteor.userId() === null) {
+          $state.go('login')
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
   });
 }

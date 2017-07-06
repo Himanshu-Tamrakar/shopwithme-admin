@@ -3,7 +3,9 @@ import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
 import uiRouter from '@uirouter/angularjs';
 import template from './navigation.html';
-
+import {
+    Meteor
+} from 'meteor/meteor';
 
 
 class Navigation {
@@ -19,6 +21,26 @@ class Navigation {
       $(".dropdown-button").dropdown();
     }, 10);
 
+    this.helpers({
+      isUser() {
+        if(Meteor.userId()) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    })
+
+  }
+
+  logout() {
+    $state = this.state;
+    Meteor.logout(function(error) {
+      if (!error) {
+        $state.go('login')
+        alert("userlogged OUt");
+      }
+    });
   }
 
 }

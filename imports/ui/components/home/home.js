@@ -52,6 +52,15 @@ function config($stateProvider) {
   'ngInject';
   $stateProvider.state('home', {
     url: '/home',
-    template: '<home></home>'
+    template: '<home></home>',
+    resolve: {
+      currentUser($q, $state) {
+        if (Meteor.userId() === null) {
+          $state.go('login')
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
   });
 }

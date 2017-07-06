@@ -7,24 +7,16 @@ import template from './shopwithme.html';
 import {
     Meteor
 } from 'meteor/meteor';
-
 import {
   name as Navigation
 } from '../navigation/navigation';
 import {
-  name as Home
-} from '../home/home';
+  name as Login
+} from '../login/login';
 
 class ShopWithMe {
-  constructor($scope, $reactive, $rootScope, $timeout, $state, $interval) {
+  constructor() {
 
-    'ngInject';
-    $reactive(this).attach($scope);
-
-    this.state = $state;
-    this.timeout = $timeout;
-    this.scope = $scope;
-    this.rootScope = $rootScope;
   }
 }
 const name = 'shopwithme';
@@ -34,14 +26,14 @@ export default angular.module(name, [
   uiRouter,
   ngMaterial,
   Navigation,
-  Home
+  Login
 ]).component(name, {
   template,
   controllerAs: name,
   controller: ShopWithMe
 }).config(config);
 
-function config($locationProvider, $urlRouterProvider, $stateProvider) {
+function config($locationProvider, $urlRouterProvider, $stateProvider, $qProvider) {
   'ngInject';
 
   $stateProvider.state('shopwithme', {
@@ -51,5 +43,7 @@ function config($locationProvider, $urlRouterProvider, $stateProvider) {
 
   $locationProvider.html5Mode(true);
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/login');
+
+  $qProvider.errorOnUnhandledRejections(false);
 }

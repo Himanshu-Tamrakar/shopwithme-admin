@@ -104,6 +104,15 @@ function config($stateProvider) {
   'ngInject';
   $stateProvider.state('questionAndAnswers', {
     url: '/questionAndAnswers',
-    template: '<question-and-answers></question-and-answers>'
+    template: '<question-and-answers></question-and-answers>',
+    resolve: {
+      currentUser($q, $state) {
+        if (Meteor.userId() === null) {
+          $state.go('login')
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
   });
 }
