@@ -1,78 +1,78 @@
 <div class="container">
-  <ul class="collection with-header">
-    <li class="collection-header">
-      <h4>All Q&A</h4>
-    </li>
-    <li class="collection-item">
-      <table>
-        <thead>
-          <tr>
-            <th>Question</th>
-            <th>Answer</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="object in questionAndAnswers.allQandA">
-            <td>{{object.question}}</td>
-            <td>{{object.answer}}</td>
-            <td>
-              <a><i ng-click="questionAndAnswers.delete(object._id)" class="material-icons">delete_forever</i></a>
-              <a href="#update-qanda"><i ng-click="questionAndAnswers.initialize(object)" class="material-icons">mode_edit</i></a></td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>FAQs</h4>
+        </li>
+        <li class="collection-item">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="object in questionAndAnswers.allQandA">
+                        <td>{{object.question}}</td>
+                        <td>{{object.answer}}</td>
+                        <td>
+                            <a><i ng-click="questionAndAnswers.delete(object._id)" class="material-icons">delete_forever</i></a>
+                            <a href="#update-qanda"><i ng-click="questionAndAnswers.initialize(object)" class="material-icons">mode_edit</i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
 
-  <a class="" href="#add-qanda"><i class="material-icons medium">add_circle</i></a>
+    <a class="" href="#add-qanda"><i class="material-icons medium">add_circle</i></a>
 </div>
 <!-- Add Location Model Structure -->
 <div id="add-qanda" class="modal">
-  <div class="modal-content">
-    <h4>Add seller</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Add FAQ</h4>
         <div class="row">
             <form class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <textarea  ng-model="questionAndAnswers.qAndA.question" id="question" class="materialize-textarea"></textarea>
-                  <label for="question">Question</label>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea ng-model="questionAndAnswers.qAndA.question" id="question" class="materialize-textarea"></textarea>
+                                <label for="question">Question</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <textarea ng-model="questionAndAnswers.qAndA.answer" id="answer" class="materialize-textarea"></textarea>
+                                <label for="answer">Answer</label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="input-field col s12">
-                  <textarea ng-model="questionAndAnswers.qAndA.answer" id="answer" class="materialize-textarea"></textarea>
-                  <label for="answer">Answer</label>
-                </div>
-              </div>
             </form>
+            <a ng-click="questionAndAnswers.insert()" class="btn waves-effect waves-light">Insert Seller</a>
         </div>
-      </form>
-      <a ng-click="questionAndAnswers.insert()" class="btn waves-effect waves-light">Insert Seller</a>
     </div>
-  </div>
 </div>
 
 <!-- update Location Model Structure -->
 <div id="update-qanda" class="modal">
-  <div class="modal-content">
-    <h4>Update</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Update FAQ</h4>
         <div class="row">
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea  ng-model="questionAndAnswers.savedQAndA.question" id="question" placeholder="{{questionAndAnswers.savedQAndA.question}}" class="materialize-textarea"></textarea>
-              <label for="question">Question</label>
-            </div>
-            <div class="input-field col s12">
-              <textarea ng-model="questionAndAnswers.savedQAndA.answer" id="answer" placeholder="{{questionAndAnswers.savedQAndA.answer}}" class="materialize-textarea"></textarea>
-              <label for="answer">Answer</label>
-            </div>
-          </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea ng-model="questionAndAnswers.savedQAndA.question" id="question" placeholder="{{questionAndAnswers.savedQAndA.question}}" class="materialize-textarea"></textarea>
+                            <label for="question">Question</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea ng-model="questionAndAnswers.savedQAndA.answer" id="answer" placeholder="{{questionAndAnswers.savedQAndA.answer}}" class="materialize-textarea"></textarea>
+                            <label for="answer">Answer</label>
+                        </div>
+                    </div>
+                </div>
+                <a ng-click="questionAndAnswers.update()" class="btn waves-effect waves-light">Insert Seller</a>
+            </form>
         </div>
-        <a ng-click="questionAndAnswers.update()" class="btn waves-effect waves-light">Insert Seller</a>
-      </form>
     </div>
-  </div>
 </div>

@@ -1,121 +1,127 @@
 <div>
-  <ul class="collection">
-    <li class="collection-item">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>URL</th>
-            <th>URL Type</th>
-            <th>Type</th>
-            <th>Operation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="object in allCardObjects.allCardObjects">
-            <td>{{object.name}}</td>
-            <td>{{object.description}}</td>
-            <td>{{object.url}}</td>
-            <td>{{object.urlType}}</td>
-            <td>{{object.type}}</td>
-            <td>
-              <a href="#update-card-objects"><i ng-click="allCardObjects.initialize(object)" class="material-icons">edit</i></a>
-              <a><i ng-click="allCardObjects.delete(object._id)" class="material-icons">delete_forever</i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
-  <a class="" href="#add-card-objects"><i class="material-icons medium">add_circle</i></a>
+    <ul class="collection">
+        <li class="collection-item">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>URL</th>
+                        <th>URL Type</th>
+                        <th>Type</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="object in allCardObjects.allCardObjects">
+                        <td>{{object.name}}</td>
+                        <td>{{object.description}}</td>
+                        <td>{{object.url}}</td>
+                        <td>{{object.urlType}}</td>
+                        <td>{{object.type}}</td>
+                        <td>
+                            <a href="#update-card-objects"><i ng-click="allCardObjects.initialize(object)" class="material-icons">edit</i></a>
+                            <a><i ng-click="allCardObjects.delete(object._id)" class="material-icons">delete_forever</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <a class="" href="#add-card-objects"><i class="material-icons medium">add_circle</i></a>
 </div>
 
 
 <!-- Add Product Model Structure -->
 <div id="add-card-objects" class="modal">
-  <div class="modal-content">
-    <h4>Add Header Image</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Add Header Image</h4>
         <div class="row">
-          <div class="input-field col s12">
-            <input ng-model="allCardObjects.cardObject_details.name" placeholder="Enter Card Object Name" id="card_object_name" type="text" class="validate">
-            <label class="active" for="card_object_name">Enter Card Object Name</label>
-          </div>
-          <div class="input-field col s12">
-            <select ng-model="allCardObjects.cardObject_details.type">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="online-job">Online Jobs</option>
-              <option value="youtube">youtube</option>
-              <option value="leisure-tamil-recipes">Leisure Tamil Recipes</option>
-              <option value="leisure-jokes">Leisure Jokes</option>
-            </select>
-            <label>Select Type</label>
-          </div>
-          <div class="input-field col s12">
-            <textarea ng-model="allCardObjects.cardObject_details.description" id="description" class="materialize-textarea"></textarea>
-            <label for="description">Textarea</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="allCardObjects.cardObject_details.url" placeholder="Enter Url" id="url" type="text" class="validate">
-            <label class="active" for="url">Enter Url</label>
-          </div>
-          <div class="input-field col s12">
-            <select ng-model="allCardObjects.cardObject_details.urlType">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="video">Video</option>
-              <option value="image">Image</option>
-            </select>
-            <label>Select Type</label>
-          </div>
-          <a ng-click="allCardObjects.insert()" class="btn center waves-effect waves-light">Insert Card Object</a>
-      </form>
-      </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input ng-model="allCardObjects.cardObject_details.name" placeholder="Enter Card Object Name" id="card_object_name" type="text" class="validate">
+                        <label class="active" for="card_object_name">Enter Card Object Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select ng-model="allCardObjects.cardObject_details.type">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="online-job">Online Jobs</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="coupon">Coupons</option>
+                            <option value="leisure-cooking-recipes">Leisure: Cooking Recipes</option>
+                            <option value="leisure-thamizhan-vlog">Leisure: Thamizhan Vlog</option>
+                            <option value="leisure-memes">Leisure: Memes</option>
+                            <option value="leisure-tricks">Leisure: I-Tips & Tricks</option>
+                        </select>
+                        <label>Select Type</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea ng-model="allCardObjects.cardObject_details.description" id="description" class="materialize-textarea"></textarea>
+                        <label for="description">Textarea</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allCardObjects.cardObject_details.url" placeholder="Enter Url" id="url" type="text" class="validate">
+                        <label class="active" for="url">Enter Url</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select ng-model="allCardObjects.cardObject_details.urlType">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="video">Video</option>
+                            <option value="image">Image</option>
+                        </select>
+                        <label>Select Type</label>
+                    </div>
+                    <a ng-click="allCardObjects.insert()" class="btn center waves-effect waves-light">Insert Card Object</a>
+            </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- Update Product Model Structure -->
 <div id="update-card-objects" class="modal">
-  <div class="modal-content">
-    <h4>Add Header Image</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Add Header Image</h4>
         <div class="row">
-          <div class="input-field col s12">
-            <input ng-model="allCardObjects.savesCardObject_details.name" placeholder="{{allCardObjects.savesCardObject_details.name}}" id="card_object_name" type="text" class="validate">
-            <label class="active" for="card_object_name">Enter Card Object Name</label>
-          </div>
-          <div class="input-field col s12">
-            <select ng-model="allCardObjects.savesCardObject_details.type">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="online-job">Online Jobs</option>
-                <option value="youtube">youtube</option>
-                <option value="leisure-tamil-recipes">Leisure Tamil Recipes</option>
-                <option value="leisure-jokes">Leisure Jokes</option>
-              </select>
-            <label>Select Type</label>
-          </div>
-          <div class="input-field col s12">
-            <textarea ng-model="allCardObjects.savesCardObject_details.description" placeholder="{{allCardObjects.savesCardObject_details.description}}" id="description" class="materialize-textarea"></textarea>
-            <label for="description">Textarea</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="allCardObjects.savesCardObject_details.url" placeholder="{{allCardObjects.savesCardObject_details.url}}" id="url" type="text" class="validate">
-            <label class="active" for="url">Update Url</label>
-          </div>
-          <div class="input-field col s12">
-            <select ng-model="allCardObjects.savesCardObject_details.urlType">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="video">Video</option>
-                <option value="image">Image</option>
-              </select>
-            <label>Select Type</label>
-          </div>
-          <a ng-click="allCardObjects.update()" class="btn center waves-effect waves-light">Insert Card Object</a>
-      </form>
-      </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input ng-model="allCardObjects.savesCardObject_details.name" placeholder="{{allCardObjects.savesCardObject_details.name}}" id="card_object_name" type="text" class="validate">
+                        <label class="active" for="card_object_name">Enter Card Object Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select ng-model="allCardObjects.savesCardObject_details.type">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="online-job">Online Jobs</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="coupon">Coupons</option>
+                            <option value="leisure-cooking-recipes">Leisure: Cooking Recipes</option>
+                            <option value="leisure-thamizhan-vlog">Leisure: Thamizhan Vlog</option>
+                            <option value="leisure-memes">Leisure: Memes</option>
+                            <option value="leisure-photography">Leisure: Photography</option>
+                        </select>
+                        <label>Select Type</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea ng-model="allCardObjects.savesCardObject_details.description" placeholder="{{allCardObjects.savesCardObject_details.description}}" id="description" class="materialize-textarea"></textarea>
+                        <label for="description">Textarea</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allCardObjects.savesCardObject_details.url" placeholder="{{allCardObjects.savesCardObject_details.url}}" id="url" type="text" class="validate">
+                        <label class="active" for="url">Update Url</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select ng-model="allCardObjects.savesCardObject_details.urlType">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="video">Video</option>
+                            <option value="image">Image</option>
+                        </select>
+                        <label>Select Type</label>
+                    </div>
+                    <a ng-click="allCardObjects.update()" class="btn center waves-effect waves-light">Insert Card Object</a>
+            </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

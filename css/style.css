@@ -8,3 +8,9 @@ html, body {
 main {
   flex: 1 0 auto;
 }
+
+#header-logo {
+  height: 40px;
+  margin: 12px 6px 12px 6px;
+  width: auto;
+}

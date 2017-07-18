@@ -1,116 +1,116 @@
 <div>
-  <ul class="collection">
-    <li class="collection-item">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Seller Name</th>
-            <th>Actual Price</th>
-            <th>ShopWithMe Price</th>
-            <th>Operation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="object in allProducts.allProducts">
-            <td>{{object.product_name}}</td>
-            <td>{{object.seller_name}}</td>
-            <td>{{object.actual_price}}</td>
-            <td>{{object.offer_price}}</td>
-            <td>
-              <a href="#update-product"><i ng-click="allProducts.initialize(object)" class="material-icons">edit</i></a>
-              <a><i ng-click="allProducts.delete(object._id)" class="material-icons">delete_forever</i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
-  <a class="" href="#add-product"><i class="material-icons medium">add_circle</i></a>
+    <ul class="collection">
+        <li class="collection-item">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Seller Name</th>
+                        <th>Actual Price</th>
+                        <th>ShopWithMe Price</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="object in allProducts.allProducts">
+                        <td>{{object.product_name}}</td>
+                        <td>{{object.seller_name}}</td>
+                        <td>{{object.actual_price}}</td>
+                        <td>{{object.offer_price}}</td>
+                        <td>
+                            <a href="#update-product"><i ng-click="allProducts.initialize(object)" class="material-icons">edit</i></a>
+                            <a><i ng-click="allProducts.delete(object._id)" class="material-icons">delete_forever</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <a class="" href="#add-product"><i class="material-icons medium">add_circle</i></a>
 </div>
 
 <!-- Add Product Model Structure -->
 <div id="add-product" class="modal">
-  <div class="modal-content">
-    <h4>Add Header Image</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Add Product</h4>
         <div class="row">
-          <div class="input-field col s12">
-            <input ng-model="allProducts.product_details.product_name" placeholder="Enter Product Name" id="product_name" type="text" class="validate">
-            <label class="active" for="product_name">Enter Product Name</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="allProducts.product_details.product_image" placeholder="Enter Product Image Url" id="product_image" type="text" class="validate">
-            <label class="active" for="product_image">Enter Product Image Url</label>
-          </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.product_details.product_name" placeholder="Enter Product Name" id="product_name" type="text" class="validate">
+                        <label class="active" for="product_name">Enter Product Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.product_details.product_image" placeholder="Enter Product Image Url" id="product_image" type="text" class="validate">
+                        <label class="active" for="product_image">Enter Product Image Url</label>
+                    </div>
 
-          <div class="input-field col s12">
-            <input ng-model="allProducts.product_details.seller_name" placeholder="Enter Seller Name" id="seller_name" type="text" class="validate">
-            <label class="active" for="seller_name">Enter Seller Name</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="allProducts.product_details.seller_image" placeholder="Enter Seller Image Url" id="seller_image" type="text" class="validate">
-            <label class="active" for="seller_image">Enter Seller Image Url</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="allProducts.product_details.actual_price" placeholder="Enter Product Actual Price" id="product_actual_price" type="text" class="validate">
-            <label class="active" for="product_actual_price">Enter Product Actual Price</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="allProducts.product_details.offer_price" placeholder="Enter Product Offer Price" id="product_offer_price" type="text" class="validate">
-            <label class="active" for="product_offer_price">Enter Product Offer Price</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="allProducts.product_details.redirect_url" placeholder="Enter Product Redirect Url" id="redirect_url" type="text" class="validate">
-            <label class="active" for="redirect_url">Enter Redirect Url</label>
-          </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.product_details.seller_name" placeholder="Enter Seller Name" id="seller_name" type="text" class="validate">
+                        <label class="active" for="seller_name">Enter Seller Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.product_details.seller_image" placeholder="Enter Seller Image Url" id="seller_image" type="text" class="validate">
+                        <label class="active" for="seller_image">Enter Seller Image Url</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="allProducts.product_details.actual_price" placeholder="Enter Product Actual Price" id="product_actual_price" type="text" class="validate">
+                        <label class="active" for="product_actual_price">Enter Product Actual Price</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="allProducts.product_details.offer_price" placeholder="Enter Product Offer Price" id="product_offer_price" type="text" class="validate">
+                        <label class="active" for="product_offer_price">Enter Product Offer Price</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="allProducts.product_details.redirect_url" placeholder="Enter Product Redirect Url" id="redirect_url" type="text" class="validate">
+                        <label class="active" for="redirect_url">Enter Redirect Url</label>
+                    </div>
+                </div>
+                <a ng-click="allProducts.insert()" class="btn center waves-effect waves-light">Insert Product</a>
+            </form>
         </div>
-        <a ng-click="allProducts.insert()" class="btn center waves-effect waves-light">Insert Product</a>
-      </form>
     </div>
-  </div>
 </div>
 
 <!-- Update Product Model Structure -->
 <div id="update-product" class="modal">
-  <div class="modal-content">
-    <h4>Add Header Image</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Update Product</h4>
         <div class="row">
-          <div class="input-field col s12">
-            <input ng-model="allProducts.saved_product_details.product_name" placeholder="{{allProducts.saved_product_details.product_name}}" id="product_name" type="text" class="validate">
-            <label class="active" for="product_name">Update Product Name</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="allProducts.saved_product_details.product_image" placeholder="{{allProducts.saved_product_details.product_image}}" id="product_image" type="text" class="validate">
-            <label class="active" for="product_image">Update Product Image Url</label>
-          </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.saved_product_details.product_name" placeholder="{{allProducts.saved_product_details.product_name}}" id="product_name" type="text" class="validate">
+                        <label class="active" for="product_name">Update Product Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.saved_product_details.product_image" placeholder="{{allProducts.saved_product_details.product_image}}" id="product_image" type="text" class="validate">
+                        <label class="active" for="product_image">Update Product Image Url</label>
+                    </div>
 
-          <div class="input-field col s12">
-            <input ng-model="allProducts.saved_product_details.seller_name" placeholder="{{allProducts.saved_product_details.seller_name}}" id="seller_name" type="text" class="validate">
-            <label class="active" for="seller_name">Update Seller Name</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="allProducts.saved_product_details.seller_image" placeholder="{{allProducts.saved_product_details.seller_image}}" id="seller_image" type="text" class="validate">
-            <label class="active" for="seller_image">Update Seller Image Url</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="allProducts.saved_product_details.actual_price" placeholder="{{allProducts.saved_product_details.actual_price}}" id="product_actual_price" type="text" class="validate">
-            <label class="active" for="product_actual_price">Update Product Actual Price</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="allProducts.saved_product_details.offer_price" placeholder="{{allProducts.saved_product_details.offer_price}}" id="product_offer_price" type="text" class="validate">
-            <label class="active" for="product_offer_price">Update Product Offer Price</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="allProducts.saved_product_details.redirect_url" placeholder="allProducts.saved_product_details.redirect_url" id="redirect_url" type="text" class="validate">
-            <label class="active" for="redirect_url">Update Redirect Url</label>
-          </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.saved_product_details.seller_name" placeholder="{{allProducts.saved_product_details.seller_name}}" id="seller_name" type="text" class="validate">
+                        <label class="active" for="seller_name">Update Seller Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="allProducts.saved_product_details.seller_image" placeholder="{{allProducts.saved_product_details.seller_image}}" id="seller_image" type="text" class="validate">
+                        <label class="active" for="seller_image">Update Seller Image Url</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="allProducts.saved_product_details.actual_price" placeholder="{{allProducts.saved_product_details.actual_price}}" id="product_actual_price" type="text" class="validate">
+                        <label class="active" for="product_actual_price">Update Product Actual Price</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="allProducts.saved_product_details.offer_price" placeholder="{{allProducts.saved_product_details.offer_price}}" id="product_offer_price" type="text" class="validate">
+                        <label class="active" for="product_offer_price">Update Product Offer Price</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input ng-model="allProducts.saved_product_details.redirect_url" placeholder="allProducts.saved_product_details.redirect_url" id="redirect_url" type="text" class="validate">
+                        <label class="active" for="redirect_url">Update Redirect Url</label>
+                    </div>
+                </div>
+                <a ng-click="allProducts.update()" class="btn center waves-effect waves-light">Update Product</a>
+            </form>
         </div>
-        <a ng-click="allProducts.update()" class="btn center waves-effect waves-light">Update Product</a>
-      </form>
     </div>
-  </div>
 </div>

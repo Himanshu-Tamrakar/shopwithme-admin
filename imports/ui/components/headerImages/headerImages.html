@@ -1,86 +1,87 @@
 <div class="container">
-  <ul class="collection with-header">
-    <li class="collection-header">
-      <h4>All Header Images</h4>
-    </li>
-    <li class="collection-item">
-      <table>
-        <thead>
-          <tr>
-              <th>Id</th>
-              <th>URL</th>
-              <th>Type</th>
-              <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="object in headerImages.allImages">
-            <td>{{object._id}}</td>
-            <td>{{object.imageUrl}}</td>
-            <td>{{object.type}}</td>
-            <td>
-              <a><i ng-click="headerImages.delete(object._id)" class="material-icons">delete_forever</i></a>
-              <a href="#update-header-image"><i ng-click="headerImages.initialize(object)" class="material-icons">mode_edit</i></a></td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
-
-  <a class="" href="#add-header-image"><i class="material-icons medium">add_circle</i></a>
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Header/Discount Images</h4>
+        </li>
+        <li class="collection-item">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>URL</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="object in headerImages.allImages">
+                        <td>{{object._id}}</td>
+                        <td>{{object.imageUrl}}</td>
+                        <td>{{object.type}}</td>
+                        <td>
+                            <a><i ng-click="headerImages.delete(object._id)" class="material-icons">delete_forever</i></a>
+                            <a href="#update-header-image"><i ng-click="headerImages.initialize(object)" class="material-icons">mode_edit</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <a class="" href="#add-header-image"><i class="material-icons medium">add_circle</i></a>
 </div>
-<!-- Add Location Model Structure -->
+
+<!-- Add Location Modal Structure -->
 <div id="add-header-image" class="modal">
-  <div class="modal-content">
-    <h4>Add Header Image</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Add Header/Discount Image</h4>
         <div class="row">
-          <div class="input-field col s12">
-            <input ng-model="headerImages.imageUrl" placeholder="Placeholder" id="img" type="text" class="validate">
-            <label class="active" for="img">Enter Url</label>
-          </div>
-          <div class="input-field col s12">
-            <select ng-model="headerImages.imageType">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="header-image">Header Image</option>
-                <option value="discount-image">Discount Image</option>
-            </select>
-            <label>Select Type</label>
-          </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input ng-model="headerImages.imageUrl" placeholder="Placeholder" id="img" type="text" class="validate">
+                        <label class="active" for="img">Enter Url</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select ng-model="headerImages.imageType">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="header-image">Header Image</option>
+                            <option value="discount-image">Discount Image</option>
+                        </select>
+                        <label>Select Type</label>
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  <div class="modal-footer">
-    <a ng-click="headerImages.insert()" id="download-button" class="btn-large waves-effect waves-light orange">Insert Location</a>
-  </div>
+    <div class="modal-footer">
+        <a ng-click="headerImages.insert()" id="download-button" class="btn-large waves-effect waves-light orange">Insert Image</a>
+    </div>
 </div>
 
-<!-- update Location Model Structure -->
+<!-- Update Location Modal Structure -->
 <div id="update-header-image" class="modal">
-  <div class="modal-content">
-    <h4>Update</h4>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Update Header/Discount Image</h4>
         <div class="row">
-          <div class="input-field col s12">
-            <input disabled ng-model="headerImages.savedImage._id" placeholder="{{headerImages.savedImage._id}}" id="image_id" type="text" class="validate">
-            <label class="active" for="image_id">Image Id</label>
-          </div>
-          <div class="input-field col s12">
-            <input disabled ng-model="headerImages.savedImage.imageType" placeholder="{{headerImages.savedImage.imageType}}" id="image_type" type="text" class="validate">
-            <label class="active" for="image_type">Type</label>
-          </div>
-          <div class="input-field col s12">
-            <input ng-model="headerImages.savedImage.imageUrl" placeholder="{{headerImages.savedImage.imageUrl}}" id="image_url" type="text" class="validate">
-            <label class="active" for="image_url">Edit URL</label>
-          </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input disabled ng-model="headerImages.savedImage._id" placeholder="{{headerImages.savedImage._id}}" id="image_id" type="text" class="validate">
+                        <label class="active" for="image_id">Image Id</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input disabled ng-model="headerImages.savedImage.imageType" placeholder="{{headerImages.savedImage.imageType}}" id="image_type" type="text" class="validate">
+                        <label class="active" for="image_type">Type</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input ng-model="headerImages.savedImage.imageUrl" placeholder="{{headerImages.savedImage.imageUrl}}" id="image_url" type="text" class="validate">
+                        <label class="active" for="image_url">Edit URL</label>
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  <div class="modal-footer">
-    <a ng-click="headerImages.update()" id="download-button" class="btn-large waves-effect waves-light orange">Update Location</a>
-  </div>
+    <div class="modal-footer">
+        <a ng-click="headerImages.update()" id="download-button" class="btn-large waves-effect waves-light orange">Update Location</a>
+    </div>
 </div>

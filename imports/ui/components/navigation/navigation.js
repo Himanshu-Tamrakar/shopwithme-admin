@@ -9,39 +9,39 @@ import {
 
 
 class Navigation {
-  constructor($scope, $reactive, $state, $timeout) {
-    'ngInject';
+    constructor($scope, $reactive, $state, $timeout) {
+        'ngInject';
 
-    $reactive(this).attach($scope);
+        $reactive(this).attach($scope);
 
-    this.scope = $scope;
-    this.state = $state;
+        this.scope = $scope;
+        this.state = $state;
 
-    $timeout(function() {
-      $(".dropdown-button").dropdown();
-    }, 10);
+        $timeout(function() {
+            $(".dropdown-button").dropdown();
+        }, 10);
 
-    this.helpers({
-      isUser() {
-        if(Meteor.userId()) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    })
+        this.helpers({
+            isUser() {
+                if (Meteor.userId()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        })
 
-  }
+    }
 
-  logout() {
-    $state = this.state;
-    Meteor.logout(function(error) {
-      if (!error) {
-        $state.go('login')
-        alert("userlogged OUt");
-      }
-    });
-  }
+    logout() {
+        $state = this.state;
+        Meteor.logout(function(error) {
+            if (!error) {
+                $state.go('login')
+                alert("User logged out");
+            }
+        });
+    }
 
 }
 
@@ -49,11 +49,11 @@ const name = 'navigation';
 
 // Module
 export default angular.module(name, [
-  angularMeteor,
-  ngMaterial,
-  uiRouter
+    angularMeteor,
+    ngMaterial,
+    uiRouter
 ]).component(name, {
-  template,
-  controllerAs: name,
-  controller: Navigation
+    template,
+    controllerAs: name,
+    controller: Navigation
 });
